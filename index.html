@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shrawani! 🎂</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="stars"></div>
+    <canvas id="fireworks-canvas" class="fireworks-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shrawani's Day</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#wishes">Wishes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#birthday-card">Birthday Card</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Memories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cake">Cake</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-text">Happy Birthday, Shrawani!</h1>
+                <p class="animate-text delay-1">On your special day, may your heart be filled with joy and your life with beautiful moments.</p>
+                <a href="#wishes" class="btn btn-primary animate-text delay-2">See Your Wishes</a>
+            </div>
+        </div>
+        <div class="floating-balloons"></div>
+    </section>
+
+    <!-- Birthday Wishes Section -->
+    <section id="wishes" class="wishes-section">
+        <div class="container">
+            <h2 class="section-title">Birthday Wishes</h2>
+            <div class="wish-card">
+                <div class="wish-content">
+                    <p class="wish-text">
+                        Dear Shrawani,<br><br>
+                        Today is all about celebrating you - your kindness, your smile, and everything that makes you uniquely special. 
+                        May this birthday bring you as much happiness as you bring to those around you. 
+                        Here's to another amazing year filled with love, laughter, and beautiful memories.<br><br>
+                        Happy Birthday!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Birthday Card Section -->
+    <section id="birthday-card" class="card-section">
+        <div class="container">
+            <h2 class="section-title">Your Special Card</h2>
+            <p class="section-subtitle">Click to open your interactive birthday card!</p>
+            <div id="birthday-card-container" class="birthday-card-container">
+                <!-- Birthday card will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Memories</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="images/placeholder1.jpg" alt="Memory 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/placeholder2.jpg" alt="Memory 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/placeholder3.jpg" alt="Memory 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/placeholder4.jpg" alt="Memory 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/placeholder5.jpg" alt="Memory 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/placeholder6.jpg" alt="Memory 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Challenge Section -->
+    <section id="cake" class="cake-section">
+        <div class="container">
+            <h2 class="section-title">Birthday Challenge</h2>
+            <p class="challenge-intro">Complete this little challenge to reveal your birthday cake!</p>
+            
+            <!-- Balloon Pop Challenge -->
+            <div id="balloon-challenge" class="challenge-container active" style="display: none;">
+                <h3>Pop the balloons to find the hidden cake!</h3>
+                <p>Find the special balloon with the cake inside</p>
+                <div class="balloons-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px;">
+                    <!-- Balloons will be added by JavaScript -->
+                    <!-- Fallback static balloons in case JS fails -->
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ff85a2; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎁
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ffa8b6; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎈
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ffd166; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎊
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #83d0c9; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎉
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ef8354; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        💖
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ff9a76; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        ✨
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #c5a3ff; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🌟
+                    </div>
+                    <div class="balloon" style="width: 80px; height: 100px; background-color: #ffd5c2; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎵
+                    </div>
+                    <div class="balloon cake-balloon" style="width: 80px; height: 100px; background-color: #8ac926; border-radius: 50%; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin: 10px;">
+                        <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 2px; height: 30px; background-color: rgba(0,0,0,0.3);"></div>
+                        🎂
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Reveal (Hidden initially) -->
+            <div id="cake-reveal" class="cake-reveal" style="display: none;">
+                <h3>You did it! Now let's celebrate!</h3>
+                <div class="cake-image">
+                    <img src="images/cake.png" alt="Birthday Cake">
+                </div>
+                <div class="birthday-message">
+                    <h2>Happy Birthday, Shrawani!</h2>
+                    <p>May all your wishes come true! 💫</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ for Shrawani's Birthday</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/birthday-card.js"></script>
+    
+    <!-- Balloon Pop Functionality -->
+    <script>
+        // Add direct event listeners for the static balloons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all static balloons
+            const staticBalloons = document.querySelectorAll('.balloon');
+            
+            // Add click events
+            staticBalloons.forEach(balloon => {
+                balloon.addEventListener('click', function(e) {
+                    // Check if this is the cake balloon
+                    const isCakeBalloon = balloon.classList.contains('cake-balloon');
+                    
+                    // Create pop effect
+                    const pop = document.createElement('div');
+                    pop.style.position = 'fixed';
+                    pop.style.width = '30px';
+                    pop.style.height = '30px';
+                    pop.style.background = 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)';
+                    pop.style.borderRadius = '50%';
+                    pop.style.zIndex = '1000';
+                    pop.style.pointerEvents = 'none';
+                    pop.style.animation = 'popEffect 0.5s forwards';
+                    pop.style.left = (e.clientX) + 'px';
+                    pop.style.top = (e.clientY) + 'px';
+                    document.body.appendChild(pop);
+                    
+                    // Add animation if not exists
+                    if (!document.querySelector('#pop-animation')) {
+                        const style = document.createElement('style');
+                        style.id = 'pop-animation';
+                        style.textContent = `
+                            @keyframes popEffect {
+                                0% { transform: scale(0); opacity: 1; }
+                                100% { transform: scale(5); opacity: 0; }
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                    
+                    // Make balloon disappear
+                    balloon.style.transform = 'scale(0)';
+                    balloon.style.opacity = '0';
+                    
+                    // If this is the cake balloon, reveal the cake
+                    if (isCakeBalloon) {
+                        setTimeout(() => {
+                            document.getElementById('balloon-challenge').style.display = 'none';
+                            document.getElementById('cake-reveal').style.display = 'block';
+                            
+                            // Launch confetti if available
+                            if (typeof confetti === 'function') {
+                                const duration = 5 * 1000;
+                                const animationEnd = Date.now() + duration;
+                                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                                
+                                function randomInRange(min, max) {
+                                    return Math.random() * (max - min) + min;
+                                }
+                                
+                                const interval = setInterval(function() {
+                                    const timeLeft = animationEnd - Date.now();
+                                    
+                                    if (timeLeft <= 0) {
+                                        return clearInterval(interval);
+                                    }
+                                    
+                                    const particleCount = 50 * (timeLeft / duration);
+                                    
+                                    confetti(Object.assign({}, defaults, { 
+                                        particleCount, 
+                                        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+                                    }));
+                                    confetti(Object.assign({}, defaults, { 
+                                        particleCount, 
+                                        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+                                    }));
+                                }, 250);
+                            }
+                            
+                            // Only start fireworks when the cake is revealed
+                            if (window.birthdayFireworks) {
+                                window.birthdayFireworks.start();
+                                
+                                // Stop fireworks after 10 seconds to avoid continuous black screen
+                                setTimeout(() => {
+                                    window.birthdayFireworks.stop();
+                                }, 10000);
+                            }
+                            
+                            // Play music
+                            if (window.birthdayMusic) {
+                                window.birthdayMusic.playMusic();
+                            }
+                        }, 500);
+                    }
+                    
+                    // Remove pop effect after animation
+                    setTimeout(() => {
+                        document.body.removeChild(pop);
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
